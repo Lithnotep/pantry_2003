@@ -6,7 +6,7 @@ require './lib/recipe'
 require './lib/cook_book'
 
 
-class PantryTest < Minitest::Test
+class RecipeTest < Minitest::Test
 
   def test_it_exists
     pantry = Pantry.new
@@ -24,7 +24,19 @@ class PantryTest < Minitest::Test
     ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
     recipe1 = Recipe.new("Mac and Cheese")
     assert_equal "Mac and Cheese", recipe1.name
+    assert_equal ({}), recipe1.ingredients
   end
+
+  def test_add_ingredient
+    pantry = Pantry.new
+    #cookbook = CookBook.new
+    ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
+    ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
+    recipe1 = Recipe.new("Mac and Cheese")
+    assert_equal 2, recipe1.ingredients[ingredient1]
+    assert_equal 8, recipe1.ingredients[ingredient2]
+  end
+
 
 
 end
