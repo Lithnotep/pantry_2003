@@ -80,7 +80,7 @@ class CookBookTest < Minitest::Test
     recipe2.add_ingredient(ingredient4, 1)
     cookbook.add_recipe(recipe1)
     cookbook.add_recipe(recipe2)
-    assert_equal [recipe2], cookbook.highest_calorie_meal
+    assert_equal recipe2, cookbook.highest_calorie_meal
   end
 
 
