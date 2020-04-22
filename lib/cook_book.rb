@@ -16,7 +16,7 @@ class CookBook
   def ingredients
     ingredient_names = []
     @recipes.each do |recipe|
-      recipe.ingredients.map {|ingredient, amount| ingredient_names << ingredient.name}
+      recipe.required_ingredients.map {|ingredient, amount| ingredient_names << ingredient.name}
     end
     ingredient_names.uniq
   end

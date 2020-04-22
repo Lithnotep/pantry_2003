@@ -22,7 +22,7 @@ class RecipeTest < Minitest::Test
     ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
     recipe1 = Recipe.new("Mac and Cheese")
     assert_equal "Mac and Cheese", recipe1.name
-    assert_equal ({}), recipe1.ingredients
+    assert_equal ({}), recipe1.required_ingredients
   end
 
   def test_add_ingredient
@@ -39,8 +39,8 @@ class RecipeTest < Minitest::Test
     recipe2.add_ingredient(ingredient3, 4)
     recipe2.add_ingredient(ingredient4, 1)
 
-    assert_equal 2, recipe1.ingredients[ingredient1]
-    assert_equal 8, recipe1.ingredients[ingredient2]
+    assert_equal 2, recipe1.required_ingredients[ingredient1]
+    assert_equal 8, recipe1.required_ingredients[ingredient2]
   end
 
   def test_can_total_calories
