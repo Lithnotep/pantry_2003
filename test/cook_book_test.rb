@@ -19,9 +19,11 @@ class CookBookTest < Minitest::Test
 
   def test_it_has_attributes
     pantry = Pantry.new
-    ingredient1 = Ingredient.new({name: "Cheese", unit: "oz", calories: 50})
-    ingredient2 = Ingredient.new({name: "Macaroni",unit: "oz",calories: 200})
-    assert_equal ({}), pantry.stock
+    cookbook = CookBook.new
+    ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
+    ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
+    recipe1 = Recipe.new("Mac and Cheese")
+    assert_equal [], cookbook.recipes
   end
 
 end
