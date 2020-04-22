@@ -6,6 +6,7 @@ class CookBook
   def initialize
     @recipes = []
     @date = DateTime.now.strftime("%m-%d-%Y")
+    #binding.pry
   end
 
   def add_recipe(recipe)
