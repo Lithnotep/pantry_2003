@@ -4,6 +4,7 @@ require './lib/ingredient'
 require './lib/pantry'
 require './lib/recipe'
 require './lib/cook_book'
+require 'date'
 
 
 class CookBookTest < Minitest::Test
@@ -81,5 +82,11 @@ class CookBookTest < Minitest::Test
     cookbook.add_recipe(recipe1)
     cookbook.add_recipe(recipe2)
     assert_equal recipe2, cookbook.highest_calorie_meal
+  end
+
+  def test_cookbook_date
+    cookbook = CookBook.new
+    expected = DateTime.now.strftime("%m-%d-%Y")
+    assert_equal expected, cookbook.date
   end
 end
