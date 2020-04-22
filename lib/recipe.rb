@@ -16,5 +16,4 @@ class Recipe
     all_ingredients = @ingredients.map {|ingredient, amount| (ingredient.calories * amount)}
     all_ingredients.sum
   end
-  
 end
